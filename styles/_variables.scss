@@ -1,0 +1,18 @@
+@use "sass:color";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik+Scribble&display=swap");
+
+$primary-background-color: #333;
+$secondary-background-color: #444;
+$primary-color: #04da4b;
+$secondary-color: #ffff;
+$hover-color: color.adjust($primary-color, $lightness: -10%);
+$icon-color: #f02f2f;
+$hover-icon-color: color.adjust($icon-color, $lightness: -10%);
+$font-text: "Inter", sans-serif;
+$font-display: "Rubik Scribble", cursive;
+
+@mixin tablet-and-up() {
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
+}

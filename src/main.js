@@ -1,6 +1,6 @@
 import "/styles/main.scss";
 import { getApi } from "./api";
-import { getSavedJoke, saveJoke } from "./store";
+import { deleteJoke, getSavedJokes, saveJoke } from "./store";
 
 const currentJokeEl = document.querySelector(".current-joke__text");
 const loadButton = document.querySelector(".current-joke__load");
@@ -27,18 +27,25 @@ function saveCurrentJoke() {
   }
 }
 
+function deleteSavedJoke(index) {
+  deleteJoke(index);
+  renderSavedJoke();
+}
+
+window.deleteSavedJoke = deleteSavedJoke;
+
 function renderSavedJoke() {
-  const savedJokes = getSavedJoke();
+  const savedJokes = getSavedJokes();
 
   let html = "";
 
-  savedJokes.forEach((joke) => {
+  savedJokes.forEach((joke, index) => {
     html += `
           <div class="saved-joke">
             <p class="saved-joke__text">
               ${joke}
             </p>
-            <button class="saved-joke__remove">
+            <button class="saved-joke__remove" onclick="deleteSavedJoke(${index})">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

@@ -34,16 +34,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  background-color: $secondary-background-color;
+  margin-top: 2rem;
 
   @include tablet-and-up() {
     margin-top: 2rem;
+  }
+
+  &__label {
+    // font-family: $font-display;
+    font-size: 1.5rem;
+    color: $primary-color;
+    margin: 1rem;
   }
 
   &__category {
     text-align-last: center;
     border: $primary-color;
     border-radius: 4px;
-    margin: 2rem;
+    margin: 1rem 2rem;
     padding: 1rem 1.5rem;
     font-size: 1rem;
     appearance: none;

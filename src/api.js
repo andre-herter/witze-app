@@ -1,4 +1,4 @@
-let API_ENDPOINT = "https://witzapi.de/api/joke";
+const API_ENDPOINT = "https://witzapi.de/api/joke";
 
 export async function getApi() {
   let apiEndpoint = API_ENDPOINT;

@@ -5,14 +5,11 @@ export async function getApi() {
 
   let apiEndpoint = API_ENDPOINT;
 
-  if (selectedValue === "Alle Kategorien") {
-    apiEndpoint;
-  } else {
+  if (selectedValue) {
     apiEndpoint += `/?category=${selectedValue}&language=de`;
   }
 
   const response = await fetch(apiEndpoint);
-
   const data = await response.json();
   return data[0].text;
 }
